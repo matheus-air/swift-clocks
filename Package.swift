@@ -7,7 +7,7 @@ let package = Package(
   // NB: While the `Clock` protocol is iOS 16+, etc., the package should support earlier platforms so that
   //     depending libraries and applications can conditionally use the library via availability checks.
   platforms: [
-    .iOS(.v13),
+    .iOS(.v11),
     .macOS(.v10_15),
     .tvOS(.v13),
     .watchOS(.v6),
@@ -21,8 +21,8 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/apple/swift-async-algorithms", revision: "cf70e78"),
     .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
-    .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "0.1.0"),
-    .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.8.0"),
+    .package(url: "git@github.com:matheus-air/swift-concurrency-extras", branch: "ios-11-compatibility"),
+    .package(url: "git@github.com:matheus-air/xctest-dynamic-overlay", branch: "ios-11-compatibility"),
   ],
   targets: [
     .target(
